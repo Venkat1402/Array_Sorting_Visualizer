@@ -1,0 +1,126 @@
+body {
+    background: rgb(2, 0, 36);
+    background: linear-gradient(
+      90deg,
+      rgba(2, 0, 36, 1) 0%,
+      rgba(9, 81, 121, 1) 35%,
+      rgba(0, 212, 255, 1) 100%
+    );
+  }
+  .array-container {
+    background-color: white;
+    margin: 0 auto;
+    margin-top: 10px;
+    border: solid 1px grey;
+    width: 100%;
+    height: 520px;
+  }
+  .array {
+    background-color: white;
+    /* width: 87%; */
+    width: 1160px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .array-bar {
+    /* width: 3px; */
+    background-color: lightskyblue;
+    display: inline-block;
+    margin: 0 1px;
+  }
+  
+  .buttons-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+  }
+  .increment-bars-container {
+    display: flex;
+  }
+  .increment-bar-array {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .title {
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+  }
+  .navText {
+    color: White;
+  }
+  
+  /* rotating the range bar as we need max at start and min at end */
+  .speed-display {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+  }
+  .increment-bar-speed input[type='range'] {
+    -webkit-appearance: none;
+    background-color: white;
+    width: 120px;
+    height: 8px;
+    border-radius: 10px;
+  }
+  
+  .increment-bar-speed input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background-color: #666;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+  }
+  
+  .generate-array-button {
+    background-color: lightskyblue;
+    height: 40px;
+    color: black;
+    /* font-size: 15px; */
+    font-weight: 550;
+    border: none;
+    border-radius: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  .sort-button {
+    background-color: #bfbfbf;
+    height: 40px;
+    color: black;
+    /* font-size: 15px; */
+    font-weight: 550;
+    border: none;
+    border-radius: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  
+  /* media Queries */
+  
+  /* On screens that are 992px wide or less, go from four columns to two columns */
+  @media screen and (max-width: 1000px) {
+    .navText {
+      color: white;
+      font-size: 15px;
+      align-items: center;
+    }
+  }
+  @media screen and (max-width: 715px) {
+    .navText {
+      display: none;
+    }
+  }
+  /* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+    }
+  }
+  
