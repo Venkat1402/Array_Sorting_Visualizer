@@ -13,7 +13,7 @@ const SortingVizualizer = () => {
   const [ANIMATION_SPEED_MS, SET_ANIMATION_SPEED_MS] = useState(10);
 
   //CHange this value for no of bars in the array.
-  const [NUMBER_OF_ARRAY_BARS, SET_NUMBER_OF_ARRAY_BARS] = useState(190);
+  const [NUMBER_OF_ARRAY_BARS, SET_NUMBER_OF_ARRAY_BARS] = useState(115);
 
   //This is the main color of array bars.
   const PRIMARY_COLOR = "lightskyblue";
@@ -23,7 +23,7 @@ const SortingVizualizer = () => {
 
   const [array, setArray] = useState([]);
 
-  const [arrWidth, setArrWidth] = useState(3);
+  const [arrWidth, setArrWidth] = useState(6);
 
   //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
