@@ -71,6 +71,9 @@ const SortingVisualizer = () => {
         }, i * ANIMATION_SPEED_MS);
       }
     }
+    setTimeout(() => {
+      disableBtn(false);
+    }, animations.length * ANIMATION_SPEED_MS);
   }
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   function BubbleSort() {
@@ -99,6 +102,9 @@ const SortingVisualizer = () => {
         }, i * 0.5 * ANIMATION_SPEED_MS);
       }
     }
+    setTimeout(() => {
+      disableBtn(false);
+    }, animations.length * 0.5 * ANIMATION_SPEED_MS);
   }
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   function SelectionSort() {
@@ -127,6 +133,9 @@ const SortingVisualizer = () => {
         }, i * 0.5 * ANIMATION_SPEED_MS);
       }
     }
+    setTimeout(() => {
+      disableBtn(false);
+    }, animations.length * 0.5 * ANIMATION_SPEED_MS);
   }
 
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -156,6 +165,9 @@ const SortingVisualizer = () => {
         }, i * 0.5 * ANIMATION_SPEED_MS);
       }
     }
+    setTimeout(() => {
+      disableBtn(false);
+    }, animations.length * 0.5 * ANIMATION_SPEED_MS);
   }
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   function QuickSort() {
@@ -184,6 +196,9 @@ const SortingVisualizer = () => {
         }, i * 0.5 * ANIMATION_SPEED_MS);
       }
     }
+    setTimeout(() => {
+      disableBtn(false);
+    }, animations.length * 0.5 * ANIMATION_SPEED_MS);
   }
   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   function areArraysEqual(arr1, arr2) {
@@ -207,6 +222,18 @@ const SortingVisualizer = () => {
   function setSpeed(value) {
     SET_ANIMATION_SPEED_MS(value);
   }
+
+  function disableBtn(value) {
+    document.getElementById("generate-array-btn").disabled = value;
+    document.getElementById("bubble-sort-btn").disabled = value;
+    document.getElementById("selection-sort-btn").disabled = value;
+    document.getElementById("insertion-sort-btn").disabled = value;
+    document.getElementById("merge-sort-btn").disabled = value;
+    document.getElementById("quick-sort-btn").disabled = value;
+    document.getElementById("arraySize").disabled = value;
+    document.getElementById("sortingSpeed").disabled = value;
+    document.getElementById("stop-animation").disabled = !value;
+  }
   ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   return (
     <>
@@ -222,6 +249,7 @@ const SortingVisualizer = () => {
             min="50"
             max="190"
             className="range-display"
+            id="arraySize"
             value={NUMBER_OF_ARRAY_BARS}
             onChange={(e) => setRange(e.target.value)}
           />
@@ -235,6 +263,7 @@ const SortingVisualizer = () => {
             min="1"
             max="10"
             className="speed-display"
+            id="sortingSpeed"
             value={ANIMATION_SPEED_MS}
             onChange={(e) => setSpeed(e.target.value)}
           />
@@ -257,26 +286,66 @@ const SortingVisualizer = () => {
         </div>
       </div>
       <div className="buttons-container">
-        <button className="generate-array-button" onClick={resetArray}>
+        <button
+          className="generate-array-button"
+          id="generate-array-btn"
+          onClick={resetArray}
+        >
           Generate New Array
         </button>
-        <button className="sort-button" onClick={BubbleSort}>
+        <button
+          className="sort-button"
+          id="bubble-sort-btn"
+          onClick={() => {
+            disableBtn(true);
+            return BubbleSort();
+          }}
+        >
           Bubble Sort
         </button>
-        <button className="sort-button" onClick={SelectionSort}>
+        <button
+          className="sort-button"
+          id="selection-sort-btn"
+          onClick={() => {
+            disableBtn(true);
+            return SelectionSort();
+          }}
+        >
           Selection Sort
         </button>
-        <button className="sort-button" onClick={InsertionSort}>
+        <button
+          className="sort-button"
+          id="insertion-sort-btn"
+          onClick={() => {
+            disableBtn(true);
+            return InsertionSort();
+          }}
+        >
           Insertion Sort
         </button>
-        <button className="sort-button" onClick={MergeSort}>
+        <button
+          className="sort-button"
+          id="merge-sort-btn"
+          onClick={() => {
+            disableBtn(true);
+            return MergeSort();
+          }}
+        >
           Merge Sort
         </button>
-        <button className="sort-button" onClick={QuickSort}>
+        <button
+          className="sort-button"
+          id="quick-sort-btn"
+          onClick={() => {
+            disableBtn(true);
+            return QuickSort();
+          }}
+        >
           Quick Sort Sort
         </button>
         <button
           className="stop-animation-button"
+          id="stop-animation"
           onClick={() => window.location.reload()}
         >
           Stop visualization
