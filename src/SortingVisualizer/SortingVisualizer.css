@@ -50,6 +50,7 @@ body {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  margin-top: 9px;
 }
 
 .increment-bar-array {
