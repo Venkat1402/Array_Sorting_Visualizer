@@ -5,10 +5,10 @@ import BubbleSortAnimations from "../Algorithms/BubbleSort";
 import SelectionSortAnimations from "../Algorithms/SelectionSort";
 import InsertionSortAnimations from "../Algorithms/InsertionSort";
 import QuickSortAnimations from "../Algorithms/QuickSort";
-import "./SortingVizualizer.css";
+import "./SortingVisualizer.css";
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-const SortingVizualizer = () => {
+const SortingVisualizer = () => {
   //Change this value for the speed of animations.
   const [ANIMATION_SPEED_MS, SET_ANIMATION_SPEED_MS] = useState(10);
 
@@ -211,12 +211,8 @@ const SortingVizualizer = () => {
   return (
     <>
       <div className="header">
-        <div className="title">Sorting Vizualizer</div>
+        <div className="title">Sorting Visualizer</div>
         {/* <div className="increment-bars-container"> */}
-        <p className="navText">
-          ( Please set size of array and sorting speed before sorting the array
-          )
-        </p>
         <div className="increment-bar-array">
           <label style={{ color: "white" }}>Size of Array</label>
           <br />
@@ -279,9 +275,29 @@ const SortingVizualizer = () => {
         <button className="sort-button" onClick={QuickSort}>
           Quick Sort Sort
         </button>
+        <button
+          className="stop-animation-button"
+          onClick={() => window.location.reload()}
+        >
+          Stop visualization
+        </button>
       </div>
+      <ul className="navText">
+        <div style={{ marginBottom: "5px" }}>
+          <b>
+            <u>Instructions</u>
+          </b>
+        </div>
+        <li>
+          Please set size of array and sorting speed before sorting the array.
+        </li>
+        <li>
+          Please click "Stop visualization" button and then proceed with the
+          next sorting algorithm.
+        </li>
+      </ul>
     </>
   );
 };
 
-export default SortingVizualizer;
+export default SortingVisualizer;
